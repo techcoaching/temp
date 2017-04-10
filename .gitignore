@@ -1,3 +1,7 @@
+packages
+obj
+bin
+published
 client/node_modules/
 client/src/**/*.js.map
 client/src/**/*.js

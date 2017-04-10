@@ -6,8 +6,8 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
 export class FormPrimaryButton {
     public cls: string = "btn-primary";
     @Input() label: string = "";
-    @Output() click: EventEmitter<any> = new EventEmitter<any>();
+    @Output() onClick: EventEmitter<any> = new EventEmitter<any>();
     public onButtonClicked(event: any) {
-        this.click.emit(event);
+        this.onClick.emit(event);
     }
 }
