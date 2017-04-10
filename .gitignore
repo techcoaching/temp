@@ -1,0 +1,5 @@
+client/node_modules/
+client/src/**/*.js.map
+client/src/**/*.js
+!client/resources
+!client/themes

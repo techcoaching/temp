@@ -1,0 +1,32 @@
+<page>
+    <page-header>Users</page-header>
+    <page-content>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                    <th>Photo</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+                    <td>{{user.firstName}}</td>
+                    <td [redColor]="'red'">{{user.lastName}}</td>
+                    <td>{{user.userName}}</td>
+                    <td><img alt="avatar" style="max-width:200px;max-height:200px" src="/src/resources/images/{{user.avatar}}"
+                        /></td>
+                    <td>
+                        <a (click)="onEditUserClicked(user.id)" title="Edit user">Edit</a>
+                        <a (click)="onSummaryClicked(user)" title="Show Summary">Summary</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <user-summary [(firstName)]=selectedUser.firstName></user-summary>
+        <label *ngIf="selectedUser">First name of selected user:{{selectedUser.firstName}}</label>
+    </page-content>
+</page>
