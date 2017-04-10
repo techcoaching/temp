@@ -11,16 +11,17 @@ import appConfig from "./config/appConfig";
         BrowserModule,
         FormsModule,
         AppCommon,
+        appConfig.layout.module,
         RouterModule.forRoot(appConfig.routes)
     ],
-    declarations: [appConfig.layout],
-    bootstrap: [appConfig.layout],
+    //declarations: [appConfig.layout],
+    bootstrap: [appConfig.layout.component],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class Application {
     constructor(ref: ApplicationRef) {
-        helperFacade.appHelper.setInjector(ref["_injector"]);
         helperFacade.appHelper.setConfig(appConfig);
+        helperFacade.appHelper.setInjector(ref["_injector"]);
         let resourceManager: IResourceManager = window.ioc.resolve(IoCNames.IResource);
         resourceManager.load(appConfig.localization.files);
     }

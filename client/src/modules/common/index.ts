@@ -9,12 +9,13 @@ export * from "./application/iappConfig";
 export * from "./enum";
 export * from "./baseModule";
 export * from "./models/baseModel";
+export * from "./models/menu/appMenuItem";
 
 export * from "./services/logger/consoleLogger";
 export * from "./services/baseService";
 export * from "./services/cache/cacheService";
 export * from "./services/routeService";
-
+export * from "./models/ui/baseLayout";
 export * from "./exception";
 
 export * from "./resourceManager";

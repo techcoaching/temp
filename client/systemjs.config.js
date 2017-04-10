@@ -7,7 +7,7 @@
             "@app/common":["src/modules/common/index"],
             "@app/security":["src/modules/security/index"],
             "@app/setting":["src/modules/setting/index"],
-            "@app/themes/default":["src/themes/default/defaultLayout"]
+            "@app/themes/default":["src/themes/default/index"]
         },
         map: {
             "src": "src",
