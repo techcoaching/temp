@@ -14,7 +14,6 @@ import appConfig from "./config/appConfig";
         appConfig.layout.module,
         RouterModule.forRoot(appConfig.routes)
     ],
-    //declarations: [appConfig.layout],
     bootstrap: [appConfig.layout.component],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

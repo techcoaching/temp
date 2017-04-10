@@ -1,5 +1,7 @@
 {
+    "menuTitle":"Security",
     "permissions": {
+        "menuTitle":"Permissions",
         "title": "Permissions",
         "addNewAction": "Add Permission",
         "grid": {

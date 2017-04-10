@@ -13,9 +13,4 @@ export class BasePage<Model> extends BaseComponent {
         let url: string = routerHelper.resolveUrl(options);
         this.router.navigate([url]);
     }
-    // protected navigate(url: string, ...options: Array<any>) {
-    //     let params = options || [];
-    //     params.unshift(url);
-    //     this.router.navigate(params);
-    // }
 }

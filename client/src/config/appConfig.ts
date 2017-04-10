@@ -14,7 +14,7 @@ let appConfig: IAppConfig = {
         files: helperFacade.moduleHelper.getModuleLocales(modules)
     },
     localeUrl: "/src/resources/locales/",
-    rootApi: "http://localhost:22383/api/",
+    rootApi: "http://localhost:8888/api/",
     ioc: ioc,
     layout:{
         component:  DefaultLayout,

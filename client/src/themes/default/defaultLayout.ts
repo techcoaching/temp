@@ -9,6 +9,7 @@ import helperFacade from "@app/common";
 export class DefaultLayout extends BaseLayout {
     public menuItems: Array<AppMenuItem> = [];
     protected onBeforeReady() {
+        console.log(helperFacade.appHelper.getConfig().getMainMenus);
         this.menuItems = helperFacade.appHelper.getConfig().menus;
         console.log("menus in layout:", this.menuItems);
     }
