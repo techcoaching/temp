@@ -14,8 +14,18 @@
         "@app/common":["src/modules/common/index"],
         "@app/themes/default":["src/themes/default/index"],
         "@app/security":["src/modules/security/index"],
-        "@app/setting":["src/modules/setting/index"]
+        "@app/setting":["src/modules/setting/index"],
+        "@app/customerManagement":["src/modules/customerManagement/index"]
     }
+    // "typeRoots": [
+    //   "node_modules/@types/"
+    // ],
+    // "types": [
+    //   "jquery",
+    //   "ej.web.all",
+    //   "node",
+    //   "es6-shim"
+    // ]
   },
   "exclude": [
     "node_modules",

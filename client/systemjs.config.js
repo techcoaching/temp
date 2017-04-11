@@ -4,10 +4,11 @@
         baseUrl: '.',
         paths: {
             npm: "node_modules/",
-            "@app/common":["src/modules/common/index"],
-            "@app/security":["src/modules/security/index"],
-            "@app/setting":["src/modules/setting/index"],
-            "@app/themes/default":["src/themes/default/index"]
+            "@app/common": ["src/modules/common/index"],
+            "@app/security": ["src/modules/security/index"],
+            "@app/setting": ["src/modules/setting/index"],
+            "@app/themes/default": ["src/themes/default/index"],
+            "@app/customerManagement":["src/modules/customerManagement/index"]
         },
         map: {
             "src": "src",
@@ -24,7 +25,8 @@
             'rxjs': 'npmrxjs',
             'ts': 'npm@plugin-typescript@4.0.10/lib/plugin.js',
             'typescript': 'npm@typescript@2.0.3/lib/typescript.js',
-            
+            'ej-angular2': 'npmej-angular2'
+
         },
         packages: {
             api: {
@@ -36,6 +38,9 @@
             },
             rxjs: {
                 defaultExtension: "js"
+            },
+            'ej-angular2': {
+                main: './src/index.js'
             }
         }
     });

@@ -58,6 +58,7 @@
     <Compile Include="Bootstrap.cs" />
     <Compile Include="Common\FileService.cs" />
     <Compile Include="Common\LanguageService.cs" />
+    <Compile Include="CustomerManagement\CustomerService.cs" />
     <Compile Include="Inventory\CategoryService.cs" />
     <Compile Include="Inventory\UnitOfMeasurementService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

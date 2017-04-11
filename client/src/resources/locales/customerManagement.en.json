@@ -1,0 +1,10 @@
+{
+    "customers": {
+        "addNewAction": "Add New",
+        "title": "Customers",
+        "customerId":"Customer ID",
+        "name":"Name",
+        "location":"Location",
+        "createdDate":"Created Date"
+    }
+}

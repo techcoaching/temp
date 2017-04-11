@@ -6,5 +6,8 @@ let menus: Array<AppMenuItem> = [
     new AppMenuItem("Setting", "", "icon-module-setting", [
         new AppMenuItem("ContentTypes", "/setting/contentTypes")
     ]),
+    new AppMenuItem("Customer Management", "", "icon-module-customer", [
+        new AppMenuItem("Customer", "/customerManagement/customers")
+    ]),
 ];
 export default menus;

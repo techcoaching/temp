@@ -1,18 +1,20 @@
 ﻿namespace App.Context
 {
-using App.Entity.Registration;
-using System.Data.Entity;
-using App.Common;
-using App.Entity.Security;
-using App.Entity.ProductManagement;
-using App.Entity.Common;
-using App.Entity.Store;
-using App.Entity.Setting;
-using App.Entity.Support;
-using App.Entity.Inventory;
+    using App.Entity.Registration;
+    using System.Data.Entity;
+    using App.Common;
+    using App.Entity.Security;
+    using App.Entity.ProductManagement;
+    using App.Entity.Common;
+    using App.Entity.Store;
+    using App.Entity.Setting;
+    using App.Entity.Support;
+    using App.Entity.Inventory;
+    using Entity.CustomerManagement;
 
     public class AppDbContext : App.Common.Data.MSSQL.MSSQLDbContext
     {
+        public System.Data.Entity.DbSet<Customer> Customers { get; set; }
         public System.Data.Entity.DbSet<FileUpload> FileUploads { get; set; }
         public System.Data.Entity.DbSet<Product> Products { get; set; }
         public System.Data.Entity.DbSet<ProductCategory> ProductCategories { get; set; }
@@ -45,7 +47,8 @@ using App.Entity.Inventory;
             modelBuilder.Entity<Role>()
                 .HasMany(role => role.Permissions)
                 .WithMany(per => per.Roles)
-                .Map(m => {
+                .Map(m =>
+                {
                     m.MapLeftKey("RoleId");
                     m.MapRightKey("PermissionId");
                     m.ToTable("PermissionInRoles");
@@ -54,7 +57,8 @@ using App.Entity.Inventory;
             modelBuilder.Entity<UserGroup>()
                 .HasMany(ug => ug.Permissions)
                 .WithMany(per => per.UserGroups)
-                .Map(m => {
+                .Map(m =>
+                {
                     m.MapLeftKey("UserGroupId");
                     m.MapRightKey("PermissionId");
                     m.ToTable("PermissionInUserGroups");

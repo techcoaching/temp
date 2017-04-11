@@ -1,6 +1,7 @@
 import { IoCNames, IoCLifeCycle, HttpConnector, ConsoleLogger, EventManager, ResourceManager, CacheService, RouteService } from "@app/common";
 import { SettingService } from "@app/setting";
 import { UserService, PermissionService } from "@app/security";
+import { CustomerService } from "@app/customerManagement";
 
 let ioc = [
     /* Common config */
@@ -15,5 +16,7 @@ let ioc = [
     { name: IoCNames.IUserService, instance: UserService, lifeCycle: IoCLifeCycle.Singleton },
     /* Setting config */
     { name: IoCNames.ISettingService, instance: SettingService, lifeCycle: IoCLifeCycle.Singleton },
+    /*Customer Management*/
+    { name: IoCNames.ICustomerService, instance: CustomerService, lifeCycle: IoCLifeCycle.Singleton },
 ];
 export default ioc;

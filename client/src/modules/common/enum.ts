@@ -55,5 +55,6 @@ export const Locale = {
 export const ModuleNames = {
     Security: "security",
     Setting: "setting",
-    Common: "common"
+    Common: "common",
+    CustomerManagement:"customerManagement"
 };

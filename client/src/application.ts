@@ -5,11 +5,13 @@ import { RouterModule } from "@angular/router";
 import { IoCNames, AppCommon, IResourceManager } from "@app/common";
 import helperFacade from "@app/common";
 import appConfig from "./config/appConfig";
+import { EJAngular2Module } from 'ej-angular2';
 
 @NgModule({
     imports: [
         BrowserModule,
         FormsModule,
+        EJAngular2Module.forRoot(),
         AppCommon,
         appConfig.layout.module,
         RouterModule.forRoot(appConfig.routes)
