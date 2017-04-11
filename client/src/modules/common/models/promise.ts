@@ -2,40 +2,49 @@ export class PromiseFactory {
     public static create(): Promise {
         return new Promise();
     }
+};
+enum PromiseStatus {
+    None,
+    Success,
+    Fail
 }
 
 export class Promise {
-    private data: any = null;
-    private errors: any = null;
-    private successCallback: any = null;
-    private errorCallback: any = null;
-    public error(errorCallback: any) {
-        this.errorCallback = errorCallback;
-        this.processPromise();
-        return this;
+    private data: any;
+    private errorData: any;
+    private self: Promise = null;
+    private successHandler: any = null;
+    private failHandler: any = null;
+    private status: PromiseStatus = PromiseStatus.None;
+    constructor() {
+        this.self = this;
+        return this.self;
     }
-    public reject(errors: any) {
-        this.errors = errors;
-        this.processPromise();
-        return this;
+    public resolve(data: any): Promise {
+        this.self.data = data;
+        this.self.status = PromiseStatus.Success;
+        return this.execute();
     }
-
-    public then(successCallback: any) {
-        this.successCallback = successCallback;
-        this.processPromise();
-        return this;
+    public then(successHandler: any): Promise {
+        this.self.successHandler = successHandler;
+        return this.execute();
     }
-    public resolve(data: any) {
-        this.data = data;
-        this.processPromise();
-        return this;
+    public error(failHandler: any): Promise {
+        this.self.failHandler = failHandler;
+        return this.execute();
     }
-    private processPromise() {
-        if (this.data != null && this.successCallback != null) {
-            this.successCallback(this.data);
+    public reject(error: any): Promise {
+        this.self.errorData = error;
+        this.self.status = PromiseStatus.Fail;
+        return this.self.execute();
+    }
+    private execute(): Promise {
+        if (this.self.status === PromiseStatus.Success && this.self.successHandler != null) {
+            this.self.successHandler(this.self.data);
         }
-        if (this.errors != null && this.errorCallback != null) {
-            this.errorCallback(this.errors);
+        if (this.self.status === PromiseStatus.Fail && this.self.failHandler != null) {
+            this.self.failHandler(this.self.errorData);
         }
+        return this.self;
     }
 }

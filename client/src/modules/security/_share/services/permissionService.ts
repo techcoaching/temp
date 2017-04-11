@@ -1,6 +1,11 @@
 import { IoCNames, BaseService, Promise, IConnector } from "@app/common";
 import { IPermissionService } from "./ipermissionService";
 export class PermissionService extends BaseService implements IPermissionService {
+    public deletePermission(itemId: string): Promise {
+        let iconnector: IConnector = window.ioc.resolve(IoCNames.IConnector);
+        let url: string = String.format("permissions/{0}", itemId);
+        return iconnector.delete(this.resolve(url));
+    }
     public getPermissions(): Promise {
         let iconnector: IConnector = window.ioc.resolve(IoCNames.IConnector);
         return iconnector.get(this.resolve("permissions"));

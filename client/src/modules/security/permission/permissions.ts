@@ -22,10 +22,11 @@ export class Permissions extends BasePage<PermissionsModel> {
         this.navigate({ name: route.permission.editPermission.name, id: event.item.id });
     }
     public onDeleteItemClicked(event: any) {
-        // let self = this;
-        // settingService.deleteContentType(event.item.id).then(function () {
-        //     self.load();
-        // });
+        let self = this;
+        let permissionService: IPermissionService = window.ioc.resolve(IoCNames.IPermissionService);
+        permissionService.deletePermission(event.item.id).then(function () {
+            self.load();
+        });
     }
     private load() {
         let self = this;

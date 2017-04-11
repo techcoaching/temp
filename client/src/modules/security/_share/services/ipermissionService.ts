@@ -4,4 +4,5 @@ export interface IPermissionService {
     getPermission(itemId: string): Promise;
     createPermission(model: any): Promise;
     updatePermission(model: any): Promise;
+    deletePermission(itemId: string): Promise;
 }
