@@ -1,0 +1,18 @@
+<page>
+	<page-header>
+		{{i18n.customerManagement.addOrUpdateCustomer.title}}
+	</page-header>
+	<page-content>
+		<horizontal-form>
+			<form-text-input [labelText]=i18n.customerManagement.addOrUpdateCustomer.name [placeHolderText]=i18n.customerManagement.addOrUpdateCustomer.inputName
+				[validation]="['customerManagement.addOrUpdateCustomer.validation.nameIsRequired','customerManagement.addOrUpdateCustomer.validation.nameAlreadyExisted']"
+				[(model)]=model.name>
+			</form-text-input>
+			<form-text-input [labelText]=i18n.customerManagement.addOrUpdateCustomer.location [placeHolderText]=i18n.customerManagement.addOrUpdateCustomer.inputLocation
+				[(model)]=model.location>
+			</form-text-input>
+			<form-primary-button (onClick)="onSaveClicked($event)" [label]="i18n.common.form.save"></form-primary-button>
+			<form-default-button (onClick)="onCancelClicked($event)" [label]="i18n.common.form.cancel"></form-default-button>
+		</horizontal-form>
+	</page-content>
+</page>

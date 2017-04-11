@@ -4,9 +4,8 @@
 		<page-actions class="pull-right" [actions]="model.actions"></page-actions>
 	</page-header>
 	<page-content>
-		<ej-grid [allowPaging]="true" [allowSorting]="true" [dataSource]="model.items">
+		<ej-grid [allowPaging]="true" [allowSorting]="true" [dataSource]="model.items" [allowGrouping]="true">
 			<e-columns>
-				<e-column field="id" [headerText]="i18n.customerManagement.customers.customerId" width="80"></e-column>
 				<e-column field="name" [headerText]="i18n.customerManagement.customers.name" width="75" textAlign="right"></e-column>
 				<e-column field="location" [headerText]="i18n.customerManagement.customers.location" width="75" textAlign="right"></e-column>
 				<e-column field="createdDate" [headerText]="i18n.customerManagement.customers.createdDate" width="80" format="{0:MM/dd/yyyy}" textAlign="right"></e-column>

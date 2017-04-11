@@ -1,12 +1,13 @@
-﻿using App.Common;
-using App.Common.DI;
-using App.Common.MVC.Attributes;
-using App.Service.CustomerManagement;
-using System.Collections.Generic;
-using System.Web.Http;
-
-namespace App.Api.Features.CustomerManagement
+﻿namespace App.Api.Features.CustomerManagement
 {
+    using App.Common;
+    using App.Common.DI;
+    using App.Common.MVC.Attributes;
+    using App.Service.CustomerManagement;
+    using System;
+    using System.Collections.Generic;
+    using System.Web.Http;
+
     [RoutePrefix("api/customers")]
     public class CustomersController : BaseApiController
     {
@@ -17,6 +18,15 @@ namespace App.Api.Features.CustomerManagement
         {
             ICustomerService service = IoC.Container.Resolve<ICustomerService>();
             return service.GetCustomers();
+        }
+        [HttpGet]
+        [Route("{id}")]
+        [ResponseWrapper()]
+        public GetCustomerResponse GetCustomer([FromUri]Guid id)
+        {
+            ICustomerService customerService = IoC.Container.Resolve<ICustomerService>();
+            GetCustomerResponse cus = customerService.GetCustomer(id);
+            return cus;
         }
     }
 }
