@@ -8,5 +8,6 @@
     public interface ICustomerRepository : IBaseRepository<Customer>
     {
         IList<TEntity> GetCustomers<TEntity>() where TEntity : IMappedFrom<Customer>;
+        Customer GetByName(string name);
     }
 }

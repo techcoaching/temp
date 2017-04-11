@@ -6,5 +6,6 @@
     {
         IList<CustomerListItem> GetCustomers();
         GetCustomerResponse GetCustomer(Guid id);
+        CreateCustomerResponse Create(CreateCustomerRequest request);
     }
 }

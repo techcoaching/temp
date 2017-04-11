@@ -22,9 +22,9 @@
             context.RegisterTransient<App.Repository.Common.IParameterRepository, App.Repository.Impl.Common.ParameterRepository>();
             context.RegisterTransient<App.Repository.Support.IRequestRepository, App.Repository.Impl.Support.RequestRepository>();
             context.RegisterTransient<App.Repository.Inventory.ICategoryRepository, App.Repository.Impl.Inventory.CategoryRepository>();
-            context.RegisterSingleton<App.Repository.Inventory.IUnitOfMeasurementRepository, App.Repository.Impl.Inventory.UnitOfMeasurementRepository>();
+            context.RegisterTransient<App.Repository.Inventory.IUnitOfMeasurementRepository, App.Repository.Impl.Inventory.UnitOfMeasurementRepository>();
 
-            context.RegisterSingleton<App.Repository.CustomerManagement.ICustomerRepository, App.Repository.Impl.CustomerManagement.CustomerRepository>();
+            context.RegisterTransient<App.Repository.CustomerManagement.ICustomerRepository, App.Repository.Impl.CustomerManagement.CustomerRepository>();
 
         }
     }

@@ -28,5 +28,15 @@
             GetCustomerResponse cus = customerService.GetCustomer(id);
             return cus;
         }
+
+        [HttpPost]
+        [Route("")]
+        [ResponseWrapper()]
+        public CreateCustomerResponse CreateCustomer(CreateCustomerRequest request)
+        {
+            ICustomerService customerService = IoC.Container.Resolve<ICustomerService>();
+            CreateCustomerResponse customer = customerService.Create(request);
+            return customer;
+        }
     }
 }

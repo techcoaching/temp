@@ -6,5 +6,11 @@ namespace App.Entity.CustomerManagement
     {
         public string Name { get; set; }
         public string Location { get; set; }
+        public Customer(){}
+        public Customer(string name, string location)
+        {
+            this.Name = name;
+            this.Location = location;
+        }
     }
 }
