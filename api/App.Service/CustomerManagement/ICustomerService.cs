@@ -7,5 +7,6 @@
         IList<CustomerListItem> GetCustomers();
         GetCustomerResponse GetCustomer(Guid id);
         CreateCustomerResponse Create(CreateCustomerRequest request);
+        void Update(UpdateCustomerRequest request);
     }
 }

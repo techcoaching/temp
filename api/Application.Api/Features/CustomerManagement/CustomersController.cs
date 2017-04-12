@@ -38,5 +38,14 @@
             CreateCustomerResponse customer = customerService.Create(request);
             return customer;
         }
+
+        [HttpPut]
+        [Route("")]
+        [ResponseWrapper()]
+        public void UpdateCustomer(UpdateCustomerRequest request)
+        {
+            ICustomerService customerService = IoC.Container.Resolve<ICustomerService>();
+            customerService.Update(request);
+        }
     }
 }

@@ -9,5 +9,6 @@
     {
         IList<TEntity> GetCustomers<TEntity>() where TEntity : IMappedFrom<Customer>;
         Customer GetByName(string name);
+        bool IsNameExisted(string name, string id = default(string));
     }
 }

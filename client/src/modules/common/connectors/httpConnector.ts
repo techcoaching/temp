@@ -6,16 +6,16 @@ import { Promise, PromiseFactory } from "./../models/promise";
 import { JsonHeaders } from "./jsonHeaders";
 //import appConfig from "./appConfig";
 import appHelper from "./../application/appHelper";
-import {IEventManager} from "../event";
-import {LoadingIndicatorEvent} from "../enum";
-import {ValidationException, ValidationEvent} from "../exception";
-import {HttpStatusCode, HttpError} from "./enum";
-import {IoCNames} from "../ioc/enum";
+import { IEventManager } from "../event";
+import { LoadingIndicatorEvent } from "../enum";
+import { ValidationException, ValidationEvent } from "../exception";
+import { HttpStatusCode, HttpError } from "./enum";
+import { IoCNames } from "../ioc/enum";
 
 export class HttpConnector implements IConnector {
     private static eventManager: IEventManager;
-    constructor(){
-        if(!HttpConnector.eventManager){
+    constructor() {
+        if (!HttpConnector.eventManager) {
             HttpConnector.eventManager = window.ioc.resolve(IoCNames.IEventManager);
         }
     }
@@ -115,7 +115,9 @@ export class HttpConnector implements IConnector {
         let validationEror: ValidationException;
         switch (exception.status) {
             case HttpStatusCode.BadRequest:
-                validationEror = new ValidationException(HttpError.BadRequest);
+                validationEror = exception.json().errors && exception.json().errors.length ? 
+                    this.getValidationExceptionFromResponse(exception.json().errors) : 
+                    new ValidationException(HttpError.BadRequest);
                 break;
             case HttpStatusCode.NotFound:
                 validationEror = new ValidationException(HttpError.NotFound);
@@ -129,42 +131,4 @@ export class HttpConnector implements IConnector {
         }
         return validationEror;
     }
-    // public getJSON(jsonPath: string) {
-    //     let http: Http = window.ioc.resolve(Http);
-    //     let def = PromiseFactory.create();
-    //     let headers = new JsonHeaders();
-    //     http.get(jsonPath, { headers: headers })
-    //         .map((response: any) => response.json())
-    //         .subscribe((data: any) => { def.resolve(data); });
-    //     return def;
-    // }
-
-    // public get(url: string): Promise {
-    //     let http: Http = window.ioc.resolve(Http);
-    //     let rootUrl = appHelper.config.rootApi;
-    //     url = rootUrl + url;
-    //     let def = PromiseFactory.create();
-    //     http.get(url)
-    //         .map(this.handleReponse)
-    //         .subscribe(
-    //         (data: any) => def.resolve(data)
-    //         );
-    //     return def;
-    // }
-    // public post(url: string, data: any): Promise {
-    //     return null;
-    //     // let rootUrl = appConfig.rootApi;
-    //     // url = rootUrl + url;
-    //     // let def = PromiseFactory.create();
-    //     // this.http.post(url, data)
-    //     //     .map(this.handleReponse)
-    //     //     .subscribe(
-    //     //     (data: any) => def.resolve(data)
-    //     //     );
-    //     // return def;
-    // }
-
-    // private handleReponse(response: Response) {
-    //     return response.json();
-    // }
 }

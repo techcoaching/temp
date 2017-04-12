@@ -23,6 +23,7 @@
                 ObjectContent content = (ObjectContent)actionExecutedContext.ActionContext.Response.Content;
                 response.SetData(content != null ? content.Value : null);
             }
+            response.SetStatus(httpStatus);
             actionExecutedContext.Response = actionExecutedContext.Request.CreateResponse(httpStatus, response);
         }
     }

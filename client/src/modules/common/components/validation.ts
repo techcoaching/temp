@@ -12,9 +12,9 @@ export class Validation {
     @Input("validation") set keys(keys: Array<string>) {
         this.errorKeys = keys;
     }
-    constructor(html: ElementRef) {
+    constructor(ui: ElementRef) {
         let self: Validation = this;
-        this.el = html.nativeElement;
+        this.el = ui.nativeElement;
         let eventManager: IEventManager = window.ioc.resolve(IoCNames.IEventManager);
         eventManager.subscribe(ValidationEvent.ValidationFail, (error: ValidationException) => self.onValidationFailed(error));
     }

@@ -4,7 +4,7 @@
 	</page-header>
 	<page-content>
 		<horizontal-form>
-			<form-text-input [labelText]=i18n.customerManagement.addOrUpdateCustomer.name [placeHolderText]=i18n.customerManagement.addOrUpdateCustomer.inputName
+			<form-text-input labelText={{i18n.customerManagement.addOrUpdateCustomer.name}} [placeHolderText]=i18n.customerManagement.addOrUpdateCustomer.inputName
 				[validation]="['customerManagement.addOrUpdateCustomer.validation.nameIsRequired','customerManagement.addOrUpdateCustomer.validation.nameAlreadyExisted']"
 				[(model)]=model.name>
 			</form-text-input>
