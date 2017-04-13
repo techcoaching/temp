@@ -1,11 +1,13 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { EJAngular2Module } from 'ej-angular2';
-import { ModuleNames, AppCommon, BaseModule } from "@app/common";
+import { ModuleConfig, ModuleNames, AppCommon, BaseModule } from "@app/common";
 import { CustomerManagementRoute } from "./customerManagementRoute";
-import route from "./_share/config/route";
 import { Customers } from "./customer/customers";
 import { AddOrUpdateCustomer } from "./customer/addOrUpdateCustomer";
+
+import ioc from "./_share/config/ioc";
+import routes from "./_share/config/route";
 @NgModule({
     imports: [FormsModule, EJAngular2Module.forRoot(), AppCommon, CustomerManagementRoute],
     declarations: [Customers, AddOrUpdateCustomer],
@@ -13,7 +15,6 @@ import { AddOrUpdateCustomer } from "./customer/addOrUpdateCustomer";
 })
 export class CustomerManagementModule extends BaseModule {
     constructor() {
-        super(ModuleNames.CustomerManagement);
-        this.registerModuleRoutes(route);
+        super(new ModuleConfig(ModuleNames.Security, ioc, routes));
     }
 }
