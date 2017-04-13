@@ -1,10 +1,11 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
-import { ModuleNames, AppCommon, BaseModule } from "@app/common";
+import { ModuleConfig, ModuleNames, AppCommon, BaseModule } from "@app/common";
 import { FormsModule } from "@angular/forms";
 import { ContentTypes } from "./contentType/contentTypes";
 import { AddOrUpdateContentType } from "./contentType/addOrUpdateContentType";
 import { SettingRoute } from "./settingRoute";
-import route from "./_share/config/route";
+import routes from "./_share/config/route";
+import ioc from "./_share/config/ioc";
 @NgModule({
     imports: [FormsModule, AppCommon, SettingRoute],
     declarations: [ContentTypes, AddOrUpdateContentType],
@@ -13,7 +14,6 @@ import route from "./_share/config/route";
 })
 export class SettingModule extends BaseModule {
     constructor() {
-        super(ModuleNames.Setting);
-        this.registerModuleRoutes(route);
+        super(new ModuleConfig(ModuleNames.Security, ioc, routes));
     }
 }

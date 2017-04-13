@@ -10,6 +10,7 @@ export * from "./enum";
 export * from "./baseModule";
 export * from "./models/baseModel";
 export * from "./models/menu/appMenuItem";
+export * from "./models/moduleConfig";
 
 export * from "./services/logger/consoleLogger";
 export * from "./services/baseService";

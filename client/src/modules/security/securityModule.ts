@@ -5,7 +5,7 @@ import { HttpModule, Http } from "@angular/http";
 import { RouterModule } from "@angular/router";
 import { ReflectiveInjector } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { ModuleNames, AppCommon, BaseModule } from "@app/common";
+import { ModuleConfig, ModuleNames, AppCommon, BaseModule } from "@app/common";
 import { SecurityRoute } from "./securityRoute";
 import { UserSummary } from "./_share/components/userSummary";
 import { RedColor } from "./_share/components/redColor";
@@ -13,6 +13,7 @@ import { Users } from "./user/users";
 import { AddNewUser } from "./user/addNewUser";
 import { EditUser } from "./user/editUser";
 import routes from "./_share/config/route";
+import ioc from "./_share/config/ioc";
 
 /*Permisison */
 import { Permissions } from "./permission/permissions";
@@ -27,7 +28,6 @@ import { AddOrUpdatePermission } from "./permission/addOrUpdatePermission";
 })
 export class SecurityModule extends BaseModule {
     constructor() {
-        super(ModuleNames.Security);
-        this.registerModuleRoutes(routes);
+        super(new ModuleConfig(ModuleNames.Security, ioc, routes));
     }
 }

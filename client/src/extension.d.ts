@@ -16,6 +16,7 @@ interface Array<T> {
     removeItem(item: any): Array<any>;
     any(callback: any): boolean;
     toString(saperator?: string): string;
+    merge(items: Array<any>, predicate: any): Array<any>;
 }
 
 interface Route {

@@ -96,6 +96,32 @@ Array.any = function (array) {
 //     }
 // }
 
+Array.prototype.merge = function (items, predicate) {
+    if (!predicate) {
+        throw "toHashtable: Predicate can not be empty";
+    }
+    var indexes = this.toHashtable(predicate);
+    var self = this;
+    items.forEach(function (item) {
+        var key = predicate(item);
+        // item already existed in destination array
+        if (indexes[key]) { return; }
+        self.push(item);
+    });
+    return self;
+}
+
+Array.prototype.toHashtable = function (predicate) {
+    if (!predicate) {
+        throw "toHashtable: Predicate can not be empty";
+    }
+    var indexes = {};
+    this.forEach(function (item) {
+        var key = predicate(item);
+        indexes[key] = item;
+    });
+    return indexes;
+};
 
 Array.prototype.firstOrDefault = function (callback) {
     var result = this.where(callback);
