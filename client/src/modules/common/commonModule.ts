@@ -22,9 +22,19 @@ import { Script } from "./components/script";
 /*Grid*/
 import { Grid } from "./components/grid/grid";
 
+import { BaseModule } from "./baseModule";
+import { ModuleNames } from "./enum";
+import { ModuleConfig } from "./models/moduleConfig";
+
+import ioc from "./ioc/iocConfig";
+
 @NgModule({
     imports: [CommonModule, FormsModule, HttpModule, RouterModule],
     declarations: [FormButton, FormTextArea, Validation, Page, HorizontalForm, FormPrimaryButton, FormInput, FormDefaultButton, FormTextInput, Style, Script, Grid, PageActions],
     exports: [FormTextArea, Validation, FormsModule, HttpModule, RouterModule, Page, HorizontalForm, FormPrimaryButton, FormDefaultButton, FormInput, Style, Script, Grid, PageActions, FormTextInput]
 })
-export class AppCommon { }
+export class AppCommon extends BaseModule {
+    constructor() {
+        super(new ModuleConfig(ModuleNames.Security, ioc));
+    }
+}
