@@ -195,6 +195,7 @@
     <Compile Include="Features\CustomerManagement\CustomersController.cs" />
     <Compile Include="Features\Inventory\CategoriesController.cs" />
     <Compile Include="Features\Inventory\UnitOfMeasurementsController.cs" />
+    <Compile Include="Features\Order\OrdersController.cs" />
     <Compile Include="Features\Security\PermissionsController.cs" />
     <Compile Include="Features\Security\UserGroupsController.cs" />
     <Compile Include="Features\Security\RolesController.cs" />
@@ -246,6 +247,14 @@
     <None Include="Properties\PublishProfiles\published.pubxml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\App.Command.Impl\App.Command.Impl.csproj">
+      <Project>{d225f4f9-c042-4be0-ae3a-277799cfcfa6}</Project>
+      <Name>App.Command.Impl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.Command\App.Command.csproj">
+      <Project>{CE75DC9E-FF91-4A55-8174-B07E4A7BDCDE}</Project>
+      <Name>App.Command</Name>
+    </ProjectReference>
     <ProjectReference Include="..\App.Context\App.Context.csproj">
       <Project>{31f025ba-25f0-45ee-907e-afef5b46e77d}</Project>
       <Name>App.Context</Name>
