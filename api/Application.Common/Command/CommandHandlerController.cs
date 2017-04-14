@@ -1,17 +1,22 @@
 ﻿namespace App.Common.Command
 {
-    using App.Common.Command.Exceptions;
-    using App.Common.DI;
-    public class CommandHandlerController : BaseApiController
+    using Aggregate;
+    public class CommandHandlerController<TAggregate> : BaseApiController where TAggregate : IBaseAggregateRoot
     {
+        private ICommandHandlerStrategy commandHandlerStrategy;
+        public CommandHandlerController() : base()
+        {
+            this.commandHandlerStrategy = CommandHandlerStrategyFactory.Create<TAggregate>();
+        }
         protected void Execute<TCommand>(TCommand command) where TCommand : IBaseCommand
         {
-            IBaseCommandHandler<TCommand> handler = IoC.Container.Resolve<IBaseCommandHandler<TCommand>>();
-            if (handler == null)
-            {
-                throw new CommandHandlerNotFound<TCommand>();
-            }
-            handler.Handle(command);
+            this.commandHandlerStrategy.Execute<TCommand>(command);
+            //IBaseCommandHandler<TCommand> handler = IoC.Container.Resolve<IBaseCommandHandler<TCommand>>();
+            //if (handler == null)
+            //{
+            //    throw new CommandHandlerNotFound<TCommand>();
+            //}
+            //handler.Handle(command);
         }
     }
 }

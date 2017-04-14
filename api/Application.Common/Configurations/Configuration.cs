@@ -1,5 +1,6 @@
 ﻿namespace App.Common.Configurations
 {
+    using CommandHandler;
     using System.Configuration;
 
     public class Configuration : System.Configuration.ConfigurationSection
@@ -91,6 +92,20 @@
             get
             {
                 return (IntegrationTestElement)this["integration-test"];
+            }
+        }
+
+
+        [ConfigurationProperty("commandHandlerSettings", IsDefaultCollection = false)]
+        [ConfigurationCollection(typeof(CommandHandlerSettingsElement),
+            AddItemName = "add",
+            ClearItemsName = "clear",
+            RemoveItemName = "remove")]
+        public CommandHandlerSettingsElement CommandHandlerSettings
+        {
+            get
+            {
+                return (CommandHandlerSettingsElement)this["commandHandlerSettings"];
             }
         }
     }

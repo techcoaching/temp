@@ -4,9 +4,10 @@
     using App.Common.Command;
     using App.Common.MVC.Attributes;
     using System.Web.Http;
+    using Aggregate.Order;
 
     [RoutePrefix("api/orders")]
-    public class OrdersController : CommandHandlerController
+    public class OrdersController : CommandHandlerController<OrderAggregate>
     {
         [Route("")]
         [HttpPost()]

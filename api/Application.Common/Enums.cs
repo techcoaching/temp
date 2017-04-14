@@ -181,4 +181,9 @@
     {
         REST
     }
+
+    public enum CommandHandlerStategyType {
+        External,
+        InApp
+    }
 }

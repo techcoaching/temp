@@ -127,6 +127,7 @@
   <ItemGroup>
     <Compile Include="Aggregate\AggregateFactory.cs" />
     <Compile Include="Aggregate\BaseAggregateRoot.cs" />
+    <Compile Include="Aggregate\IBaseAggregateRoot.cs" />
     <Compile Include="Application\ApplicationFactory.cs" />
     <Compile Include="Authorize\IAuthorization.cs" />
     <Compile Include="Authorize\IUserLoginAuthorization.cs" />
@@ -135,11 +136,16 @@
     <Compile Include="Command\BaseCommand.cs" />
     <Compile Include="Command\CommandHandlerController.cs" />
     <Compile Include="Command\CommandHandlerException.cs" />
+    <Compile Include="Command\CommandHandlerStrategyFactory.cs" />
     <Compile Include="Command\Exceptions\CommandHandlerExceptionKeys.cs" />
     <Compile Include="Command\Exceptions\CommandHandlerNotFound.cs" />
+    <Compile Include="Command\Handlers\InAppCommandHandlerStategy.cs" />
     <Compile Include="Command\IBaseCommand.cs" />
     <Compile Include="Command\IBaseCommandHandler.cs" />
+    <Compile Include="Command\ICommandHandlerStrategy.cs" />
     <Compile Include="Configurations\AuthenticationElement.cs" />
+    <Compile Include="Configurations\CommandHandler\CommandHandlerOption.cs" />
+    <Compile Include="Configurations\CommandHandler\CommandHandlerSettingsElement.cs" />
     <Compile Include="Configurations\DatabasesElement.cs" />
     <Compile Include="Configurations\FolderElement.cs" />
     <Compile Include="Configurations\IntegrationTestElement.cs" />
