@@ -1,5 +1,6 @@
 ﻿namespace App.Common.Helpers
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
@@ -10,6 +11,11 @@
         public static TEntity Convert<TEntity>(object obj)
         {
             return AutoMapper.Mapper.Map<TEntity>(obj);
+        }
+
+        internal static TEntity CreateInstance<TEntity>() where TEntity : class
+        {
+            return Activator.CreateInstance<TEntity>();
         }
 
         public static IList<ValidationRequest> GetPropertyAttributes<TValidator>(object obj) where TValidator : BaseAttribute

@@ -59,6 +59,7 @@
     <Compile Include="CustomerManagement\ICustomerRepository.cs" />
     <Compile Include="Inventory\ICategoryRepository.cs" />
     <Compile Include="Inventory\IUnitOfMeasurementRepository.cs" />
+    <Compile Include="Order\IOrderRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registration\IUserRepository.cs" />
     <Compile Include="Setting\IContentTypeRepository.cs" />
@@ -68,6 +69,10 @@
     <Compile Include="Support\IRequestRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\App.Aggregate\App.Aggregate.csproj">
+      <Project>{3fc40c0d-a53f-4507-94d8-e99aee04ae29}</Project>
+      <Name>App.Aggregate</Name>
+    </ProjectReference>
     <ProjectReference Include="..\App.Entity\App.Entity.csproj">
       <Project>{75767a70-cd8b-4f27-ae4b-45be7c3209ac}</Project>
       <Name>App.Entity</Name>

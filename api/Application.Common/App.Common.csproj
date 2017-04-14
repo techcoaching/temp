@@ -125,6 +125,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aggregate\AggregateFactory.cs" />
+    <Compile Include="Aggregate\BaseAggregateRoot.cs" />
     <Compile Include="Application\ApplicationFactory.cs" />
     <Compile Include="Authorize\IAuthorization.cs" />
     <Compile Include="Authorize\IUserLoginAuthorization.cs" />

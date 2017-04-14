@@ -6,9 +6,7 @@
 
     public class Bootstrap : App.Common.Tasks.BaseTask<IBaseContainer>, IBootstrapper
     {
-        public Bootstrap() : base(App.Common.ApplicationType.All)
-        {
-        }
+        public Bootstrap() : base(App.Common.ApplicationType.All) { }
 
         public override void Execute(IBaseContainer context)
         {
@@ -25,6 +23,8 @@
             context.RegisterTransient<App.Repository.Inventory.IUnitOfMeasurementRepository, App.Repository.Impl.Inventory.UnitOfMeasurementRepository>();
 
             context.RegisterTransient<App.Repository.CustomerManagement.ICustomerRepository, App.Repository.Impl.CustomerManagement.CustomerRepository>();
+            /*Order */
+            context.RegisterTransient<App.Repository.Order.IOrderRepository, App.Repository.Impl.Order.OrderRepository>();
 
         }
     }
