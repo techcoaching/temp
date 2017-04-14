@@ -20,6 +20,7 @@
             {
                 IOrderRepository repository = IoC.Container.Resolve<IOrderRepository>(uow);
                 repository.Add(order);
+                uow.Commit();
             }
         }
     }
