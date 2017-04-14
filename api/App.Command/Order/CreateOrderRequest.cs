@@ -4,8 +4,7 @@
     using System.Collections.Generic;
     public class CreateOrderRequest : BaseCommand
     {
-        public string CustomerName { get; set; }
-        public CustomerDetail OrderDetail { get; set; }
+        public CustomerDetail CustomerDetail { get; set; }
         public IList<OrderLine> OrderLines { get; set; }
     }
 }
