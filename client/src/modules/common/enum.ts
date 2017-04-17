@@ -56,5 +56,6 @@ export const ModuleNames = {
     Security: "security",
     Setting: "setting",
     Common: "common",
-    CustomerManagement:"customerManagement"
+    CustomerManagement:"customerManagement",
+    Dashboard:"dashboard"
 };

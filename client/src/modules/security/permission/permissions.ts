@@ -8,8 +8,8 @@ import route from "../_share/config/route";
     templateUrl: "src/modules/security/permission/permissions.html"
 })
 export class Permissions extends BasePage<PermissionsModel> {
-    constructor(router: Router) {
-        super(router);
+    constructor() {
+        super();
         let self = this;
         self.model = new PermissionsModel(self.i18nHelper);
         self.load();

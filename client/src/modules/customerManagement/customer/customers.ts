@@ -9,7 +9,7 @@ import route from "../_share/config/route";
 })
 export class Customers extends BasePage<CustomersModel> {
     constructor(router: Router) {
-        super(router);
+        super();
         let self = this;
         self.model = new CustomersModel();
         self.load();
@@ -24,8 +24,5 @@ export class Customers extends BasePage<CustomersModel> {
         customerService.getCustomers().then(function (items: Array<any>) {
             self.model.import(items);
         });
-    }
-    public onEditClicked(item: any){
-        console.log(item);
     }
 }

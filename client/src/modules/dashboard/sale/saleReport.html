@@ -1,0 +1,10 @@
+<page>
+	<page-header>
+		{{i18n.dashboard.saleReport.title}}
+	</page-header>
+	<page-content>
+		<div *ngIf="reportViewer">
+			{{reportViewer.renderHtml()}}
+		</div>
+	</page-content>
+</page>

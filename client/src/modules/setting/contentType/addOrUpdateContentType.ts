@@ -11,11 +11,10 @@ import route from "../_share/config/route";
 export class AddOrUpdateContentType extends BasePage<AddOrUpdateContentTypeModel> {
     private mode: FormMode = FormMode.AddNew;
     private itemId: any;
-    constructor(router: Router, activatedRoute: ActivatedRoute) {
-        super(router);
+    constructor(activatedRoute: ActivatedRoute) {
+        super();
         let self = this;
         self.model = new AddOrUpdateContentTypeModel();
-        self.router = router;
         if (!!activatedRoute.params["value"].id) {
             self.mode = FormMode.Edit;
             self.itemId = activatedRoute.params["value"].id;

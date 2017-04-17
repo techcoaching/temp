@@ -12,7 +12,7 @@ export class AddOrUpdateCustomer extends BasePage<AddOrUpdateCustomerModel> {
     private mode: FormMode = FormMode.AddNew;
     private itemId: any;
     constructor(router: Router, activatedRoute: ActivatedRoute) {
-        super(router);
+        super();
         let self = this;
         self.model = new AddOrUpdateCustomerModel();
         if (!!activatedRoute.params["value"].id) {

@@ -8,8 +8,8 @@ import { AddNewUserModel } from "./addNewUserModel";
 })
 export class AddNewUser extends BasePage<AddNewUserModel> {
     private userService: UserService;
-    constructor(router: Router, userService: UserService) {
-        super(router);
+    constructor(userService: UserService) {
+        super();
         this.model = new AddNewUserModel();
         this.userService = userService;
     }

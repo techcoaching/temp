@@ -5,9 +5,9 @@ import { ComponentType } from "./enum";
 export class BasePage<Model> extends BaseComponent {
     protected router: Router;
     protected model: Model;
-    constructor(router: Router) {
+    constructor() {
         super(ComponentType.Page)
-        this.router = router;
+        this.router = window.ioc.resolve(Router);
     }
     protected navigate(options: any) {
         let url: string = routerHelper.resolveUrl(options);

@@ -11,6 +11,7 @@ export * from "./baseModule";
 export * from "./models/baseModel";
 export * from "./models/menu/appMenuItem";
 export * from "./models/moduleConfig";
+export * from "./models/imoduleConfigItem";
 
 export * from "./services/logger/consoleLogger";
 export * from "./services/baseService";

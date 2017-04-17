@@ -22,3 +22,29 @@ interface Array<T> {
 interface Route {
     name?: string;
 }
+declare namespace Stimulsoft.Viewer {
+    export enum StiWebViewMode{
+        WholeReport
+    }
+    export class StiViewerOptions {
+        appearance: any;
+        toolbar: any;
+        width: any;
+        height: any;
+    }
+    export class StiViewer {
+        constructor(...params: Array<any>);
+
+    }
+}
+
+declare namespace Stimulsoft.Report {
+    export class StiReport {
+        loadFile(path: string): void;
+    }
+}
+declare namespace Stimulsoft.System.Drawing{
+    export enum Color{
+        navy
+    }
+}

@@ -9,8 +9,8 @@ import routes from "../_share/config/route";
 export class Users extends BasePage<any> {
     public selectedUser: any = {};
     public users: Array<any> = [];
-    constructor(router: Router) {
-        super(router);
+    constructor() {
+        super();
         let self = this;
         let userService: IUserService = window.ioc.resolve(IoCNames.IUserService);
         userService.getUsers().then(function (users: Array<any>) {

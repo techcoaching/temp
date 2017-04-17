@@ -9,5 +9,8 @@ let menus: Array<AppMenuItem> = [
     new AppMenuItem("Customer Management", "", "icon-module-customer", [
         new AppMenuItem("Customer", "/customerManagement/customers")
     ]),
+    new AppMenuItem("Dashboard", "", "", [
+        new AppMenuItem("Sale Report", "/dashboard/report/saleReport")
+    ]),
 ];
 export default menus;

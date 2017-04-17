@@ -15,6 +15,6 @@ import routes from "./_share/config/route";
 })
 export class CustomerManagementModule extends BaseModule {
     constructor() {
-        super(new ModuleConfig(ModuleNames.Security, ioc, routes));
+        super(new ModuleConfig(ModuleNames.CustomerManagement, ioc, routes));
     }
 }
