@@ -4,7 +4,7 @@
 		<page-actions class="pull-right" [actions]="model.actions"></page-actions>
 	</page-header>
 	<page-content>
-		<ej-grid [allowPaging]="true" [pageSettings.pageSize]="5" [dataSource]="model.items">
+		<ej-grid [allowPaging]="true" [pageSettings.pageSize]="5" [dataSource]="model.items" [allowGrouping]=true>
 			<e-columns>
 				<e-column field="name" [headerText]="i18n.customerManagement.customers.name" width="75" textAlign="right"></e-column>
 				<e-column field="location" [headerText]="i18n.customerManagement.customers.location" width="75" textAlign="right"></e-column>
