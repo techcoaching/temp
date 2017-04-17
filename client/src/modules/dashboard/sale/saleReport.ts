@@ -4,7 +4,6 @@ import { BasePage } from "@app/common";
     templateUrl: "src/modules/dashboard/sale/saleReport.html"
 })
 export class SaleReport extends BasePage<any> {
-    public reportViewer: any;
     protected onReady() {
         var options = new Stimulsoft.Viewer.StiViewerOptions();
         options.appearance.scrollbarsMode = true;
@@ -17,9 +16,10 @@ export class SaleReport extends BasePage<any> {
         options.width = "1000px";
         options.height = "500px";
 
-        this.reportViewer = new Stimulsoft.Viewer.StiViewer(options, "StiViewer", false);
+        let reportViewer: any = new Stimulsoft.Viewer.StiViewer(options, "StiViewer", false);
         var report = new Stimulsoft.Report.StiReport();
-        report.loadFile("http://localhost:3000/api/reports/SimpleList.mrt");
-        this.reportViewer.report = report;
+        report.loadFile("http://localhost:12345/api/reports/SimpleList.mrt");
+        reportViewer.report = report;
+        reportViewer.renderHtml("reportViewerContent");
     }
 }
