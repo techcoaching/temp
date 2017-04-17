@@ -223,7 +223,7 @@
         "Ident": "StiJsonDatabase",
         "Name": "Demo",
         "Alias": "Demo",
-        "PathData": "http://localhost:12345/api/reports/Demo.json"
+        "PathData": "/api/reports/Demo.json"
       }
     }
   },

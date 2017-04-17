@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { BasePage } from "@app/common";
+import helperFacade from "@app/common";
 @Component({
     templateUrl: "src/modules/dashboard/sale/saleReport.html"
 })
@@ -18,7 +19,7 @@ export class SaleReport extends BasePage<any> {
 
         let reportViewer: any = new Stimulsoft.Viewer.StiViewer(options, "StiViewer", false);
         var report = new Stimulsoft.Report.StiReport();
-        report.loadFile("http://localhost:12345/api/reports/SimpleList.mrt");
+        report.loadFile("/api/reports/SimpleList.mrt");
         reportViewer.report = report;
         reportViewer.renderHtml("reportViewerContent");
     }
