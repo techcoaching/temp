@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "outDir":"./build/",
     "baseUrl": ".",
     "target": "es6",
     "module": "system",
@@ -17,15 +18,6 @@
         "@app/setting":["src/modules/setting/index"],
         "@app/customerManagement":["src/modules/customerManagement/index"]
     }
-    // "typeRoots": [
-    //   "node_modules/@types/"
-    // ],
-    // "types": [
-    //   "jquery",
-    //   "ej.web.all",
-    //   "node",
-    //   "es6-shim"
-    // ]
   },
   "exclude": [
     "node_modules",
