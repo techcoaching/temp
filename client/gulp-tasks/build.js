@@ -13,15 +13,17 @@ var Builder = require('systemjs-builder');
 //var zip = require('gulp-zip');
 
 gulp.task('build', function (done) {
-    runSequence("clean",'compile', 'copy-assets');
+    runSequence("clean", 'compile', 'copy-assets');//, 'bundle-module', buildSJS);
     function buildSJS() {
+        console.log("Bundling js file ...");
         var builder = new Builder({ defaultJSExtensions: true, baseUrl: '.' });
         builder.loadConfig('./systemjs.conf.js')
             .then(function () {
+                console.log("Bundling \'" + config.bundleName + "\' file ...");
                 return builder.bundle('src/main', config.bundleName, config.systemJs.builder);
             })
             .then(function () {
-                console.log('Build complete');
+                console.log('Bundle progress was completed');
                 done();
             })
             .catch(function (ex) {
@@ -30,7 +32,25 @@ gulp.task('build', function (done) {
             });
     }
 });
+gulp.task('bundle-module', function (done) {
+    console.log("Bundling js file ...");
+    var builder = new Builder({ defaultJSExtensions: true, baseUrl: '.' });
+    builder.loadConfig('./systemjs.conf.js')
+        .then(function () {
+            var filePath = config.build.path + "common.js";
+            console.log("Bundling \'" + filePath + "\' file ...");
+            return builder.bundle('src/modules/common/index', filePath, config.systemJs.builder);
+        })
+        .then(function () {
+            console.log('Bundle progress was completed');
+            done();
+        })
+        .catch(function (ex) {
+            console.log('error:', ex);
+            done(ex)
+        });
 
+});
 // gulp.task('create-zip',function(done){
 //     return gulp.src(config.zip.path)
 // 		.pipe(zip(config.zip.archive))
@@ -40,7 +60,7 @@ gulp.task('build', function (done) {
 gulp.task('copy-assets', function (done) {
     for (var fileIndex = 0; fileIndex < config.files.length; fileIndex++) {
         var fileItem = config.files[fileIndex];
-        var base=fileItem.base?fileItem.base:config.app;
+        var base = fileItem.base ? fileItem.base : config.app;
         var dest = base + fileItem.src;
         console.log("Copying file " + dest);
         gulp.src(dest, {

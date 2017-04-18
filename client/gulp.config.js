@@ -35,6 +35,7 @@ module.exports = function () {
         { src: 'node_modules/rxjs/**/*.*', base:"./" },
         { src: 'node_modules/syncfusion-ej-global/**/*.*', base:"./" },
         { src: 'node_modules/syncfusion-javascript/**/*.*', base:"./" },
+        { src: 'api/reports/**/*.*', base:"./" },
     ];
     var zip = {
         path: "dist/**/*.*",
