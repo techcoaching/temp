@@ -40,7 +40,7 @@
  */
 
 var CURRENT_URL = window.location.href.split('#')[0].split('?')[0],
-    $BODY = $('body'),
+    $BODY = $('#body'),
     $MENU_TOGGLE = $('#menu_toggle'),
     $SIDEBAR_MENU = $('#sidebar-menu'),
     $SIDEBAR_FOOTER = $('.sidebar-footer'),
@@ -60,7 +60,7 @@ var setContentHeight = function () {
 
 	var bodyHeight = $BODY.outerHeight(),
 		footerHeight = $BODY.hasClass('footer_fixed') ? -10 : $FOOTER.height(),
-		leftColHeight = $LEFT_COL.eq(1).height() + $SIDEBAR_FOOTER.height(),
+		leftColHeight = $LEFT_COL.height() + $SIDEBAR_FOOTER.height(),
 		contentHeight = bodyHeight < leftColHeight ? leftColHeight : bodyHeight;
 
 	// normalize content
@@ -5027,40 +5027,40 @@ if (typeof NProgress != 'undefined') {
 	   
 	$(document).ready(function() {
 				
-		init_sparklines();
-		init_flot_chart();
+		//init_sparklines();
+		//init_flot_chart();
 		init_sidebar();
-		init_wysiwyg();
-		init_InputMask();
-		init_JQVmap();
-		init_cropper();
-		init_knob();
-		init_IonRangeSlider();
-		init_ColorPicker();
-		init_TagsInput();
-		init_parsley();
-		init_daterangepicker();
-		init_daterangepicker_right();
-		init_daterangepicker_single_call();
-		init_daterangepicker_reservation();
-		init_SmartWizard();
-		init_EasyPieChart();
-		init_charts();
-		init_echarts();
-		init_morris_charts();
-		init_skycons();
-		init_select2();
-		init_validator();
-		init_DataTables();
-		init_chart_doughnut();
-		init_gauge();
-		init_PNotify();
-		init_starrr();
-		init_calendar();
-		init_compose();
-		init_CustomNotification();
-		init_autosize();
-		init_autocomplete();
+		//init_wysiwyg();
+		//init_InputMask();
+		//init_JQVmap();
+		//init_cropper();
+		// init_knob();
+		// init_IonRangeSlider();
+		// init_ColorPicker();
+		// init_TagsInput();
+		// init_parsley();
+		// init_daterangepicker();
+		// init_daterangepicker_right();
+		// init_daterangepicker_single_call();
+		// init_daterangepicker_reservation();
+		// init_SmartWizard();
+		// init_EasyPieChart();
+		// init_charts();
+		// init_echarts();
+		// init_morris_charts();
+		// init_skycons();
+		// init_select2();
+		// init_validator();
+		// init_DataTables();
+		// init_chart_doughnut();
+		// init_gauge();
+		// init_PNotify();
+		// init_starrr();
+		// init_calendar();
+		// init_compose();
+		// init_CustomNotification();
+		// init_autosize();
+		// init_autocomplete();
 				
 	});	
 	
