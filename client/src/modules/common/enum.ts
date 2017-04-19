@@ -59,3 +59,8 @@ export const ModuleNames = {
     CustomerManagement:"customerManagement",
     Dashboard:"dashboard"
 };
+
+export enum PageActionItemType{
+    Button,
+    Dropdown
+}

@@ -13,7 +13,7 @@ export class Customers extends BasePage<CustomersModel> {
         let self = this;
         self.model = new CustomersModel();
         self.load();
-        this.model.addPageAction(new PageAction("btnAddNew", "customerManagement.customers.addNewAction", () => { self.onAddNewItemClicked(); }));
+        this.model.addPageAction(new PageAction("customerManagement.customers.addNewAction", () => { self.onAddNewItemClicked(); }));
     }
     private onAddNewItemClicked() {
         this.navigate(route.customer.addCustomer.name);
