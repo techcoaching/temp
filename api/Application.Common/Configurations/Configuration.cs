@@ -1,6 +1,7 @@
 ﻿namespace App.Common.Configurations
 {
     using CommandHandler;
+    using EventHandler;
     using System.Configuration;
 
     public class Configuration : System.Configuration.ConfigurationSection
@@ -106,6 +107,19 @@
             get
             {
                 return (CommandHandlerSettingsElement)this["commandHandlerSettings"];
+            }
+        }
+
+        [ConfigurationProperty("eventHandlers", IsDefaultCollection = false)]
+        [ConfigurationCollection(typeof(EventHandlersElement),
+            AddItemName = "add",
+            ClearItemsName = "clear",
+            RemoveItemName = "remove")]
+        public EventHandlersElement EventHandlers
+        {
+            get
+            {
+                return (EventHandlersElement)this["eventHandlers"];
             }
         }
     }

@@ -13,6 +13,7 @@
     {
         public void Handle(CreateOrderRequest command)
         {
+
             OrderAggregate order = AggregateFactory.Create<OrderAggregate>();
             order.AddCustomerDetail(command.CustomerDetail);
             order.AddOrderLineItems(command.OrderLines);
@@ -22,6 +23,7 @@
                 repository.Add(order);
                 uow.Commit();
             }
+            order.PublishEvents();
         }
     }
 }

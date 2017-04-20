@@ -11,7 +11,8 @@
         {
             string className = typeof(TAggregate).FullName;
             CommandHandlerOption option = Configuration.Current.CommandHandlerSettings[className];
-            switch (option.Type)
+            CommandHandlerStategyType type = option == null ? CommandHandlerStategyType.InApp : option.Type;
+            switch (type)
             {
                 //case CommandHandlerStategyType.External:
                 //    return new ExternalCommandHandlerStategy();

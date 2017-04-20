@@ -147,6 +147,8 @@
     <Compile Include="Configurations\CommandHandler\CommandHandlerOption.cs" />
     <Compile Include="Configurations\CommandHandler\CommandHandlerSettingsElement.cs" />
     <Compile Include="Configurations\DatabasesElement.cs" />
+    <Compile Include="Configurations\EventHandler\EventHandlerOption.cs" />
+    <Compile Include="Configurations\EventHandler\EventHandlersElement.cs" />
     <Compile Include="Configurations\FolderElement.cs" />
     <Compile Include="Configurations\IntegrationTestElement.cs" />
     <Compile Include="Configurations\MailElement.cs" />
@@ -186,9 +188,13 @@
     <Compile Include="DI\Castle\ConfigServicesContainerTask.cs" />
     <Compile Include="Event\BaseEventHandler.cs" />
     <Compile Include="Event\BaseEventManager.cs" />
+    <Compile Include="Event\EventManagerStrategy.cs" />
     <Compile Include="Event\IEvent.cs" />
     <Compile Include="Event\IEventHandler.cs" />
+    <Compile Include="Event\IEventHandlerStrategy.cs" />
     <Compile Include="Event\IEventManager.cs" />
+    <Compile Include="Event\IEventManagerStrategy.cs" />
+    <Compile Include="Event\Strategy\InAppEventHandlerStategy.cs" />
     <Compile Include="Helpers\EmailHelper.cs" />
     <Compile Include="Helpers\GuidHelper.cs" />
     <Compile Include="Helpers\ImageHelper.cs" />

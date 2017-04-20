@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrap.cs" />
+    <Compile Include="Order\OrderEventHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Support\SupportRequestEventHandler.cs" />
     <Compile Include="Support\SupportRequestOnStatusChangedMailContent.cs" />
@@ -50,6 +51,10 @@
     <ProjectReference Include="..\App.EventHandler\App.EventHandler.csproj">
       <Project>{ba0a5a0e-655d-4dbd-ab5a-f3209fd4a053}</Project>
       <Name>App.EventHandler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.Event\App.Event.csproj">
+      <Project>{6aa214af-9650-4c32-aca2-a4b0bc625289}</Project>
+      <Name>App.Event</Name>
     </ProjectReference>
     <ProjectReference Include="..\App.Service\App.Service.csproj">
       <Project>{52b208eb-1196-4285-bfef-9563bb6a9147}</Project>

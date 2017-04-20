@@ -51,6 +51,10 @@
       <Project>{ce75dc9e-ff91-4a55-8174-b07e4a7bdcde}</Project>
       <Name>App.Command</Name>
     </ProjectReference>
+    <ProjectReference Include="..\App.Event\App.Event.csproj">
+      <Project>{6AA214AF-9650-4C32-ACA2-A4B0BC625289}</Project>
+      <Name>App.Event</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Application.Common\App.Common.csproj">
       <Project>{fa3eaa76-30ec-41fd-b9b1-c46158b9e821}</Project>
       <Name>App.Common</Name>

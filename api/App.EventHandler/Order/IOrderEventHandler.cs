@@ -1,6 +1,8 @@
 ﻿namespace App.EventHandler.Order
 {
-    public interface IOrderEventHandler
+    using App.Common.Event;
+    using App.Event.Order;
+    public interface IOrderEventHandler: IEventHandler<OnCustomerDetailChanged>
     {
     }
 }

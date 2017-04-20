@@ -91,6 +91,10 @@
       <Project>{ba0a5a0e-655d-4dbd-ab5a-f3209fd4a053}</Project>
       <Name>App.EventHandler</Name>
     </ProjectReference>
+    <ProjectReference Include="..\App.Event\App.Event.csproj">
+      <Project>{6aa214af-9650-4c32-aca2-a4b0bc625289}</Project>
+      <Name>App.Event</Name>
+    </ProjectReference>
     <ProjectReference Include="..\App.Repository.Impl\App.Repository.Impl.csproj">
       <Project>{c17cf1e1-9b4e-4b53-9493-d2f39ee31a45}</Project>
       <Name>App.Repository.Impl</Name>

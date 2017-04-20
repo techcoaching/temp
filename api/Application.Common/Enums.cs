@@ -186,4 +186,10 @@
         External,
         InApp
     }
+
+    public enum EventHandlerStategyType
+    {
+        External,
+        InApp
+    }
 }
