@@ -9,11 +9,11 @@ import route from "../_share/config/route";
 })
 export class Customers extends BasePage<CustomersModel> {
     constructor(router: Router) {
-        super(router);
+        super();
         let self = this;
         self.model = new CustomersModel();
         self.load();
-        this.model.addPageAction(new PageAction("btnAddNew", "customerManagement.customers.addNewAction", () => { self.onAddNewItemClicked(); }));
+        this.model.addPageAction(new PageAction("customerManagement.customers.addNewAction", () => { self.onAddNewItemClicked(); }));
     }
     private onAddNewItemClicked() {
         this.navigate(route.customer.addCustomer.name);
@@ -24,8 +24,5 @@ export class Customers extends BasePage<CustomersModel> {
         customerService.getCustomers().then(function (items: Array<any>) {
             self.model.import(items);
         });
-    }
-    public onEditClicked(item: any){
-        console.log(item);
     }
 }

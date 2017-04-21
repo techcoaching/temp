@@ -8,12 +8,12 @@ import route from "../_share/config/route";
     templateUrl: "src/modules/setting/contentType/contentTypes.html"
 })
 export class ContentTypes extends BasePage<ContentTypesModel> {
-    constructor(router: Router) {
-        super(router);
+    constructor() {
+        super();
         let self = this;
         self.model = new ContentTypesModel(self.i18nHelper);
         self.load();
-        this.model.addPageAction(new PageAction("btnAddNew", "setting.contentTypes.addNewAction", () => { self.onAddNewItemClicked(); }));
+        this.model.addPageAction(new PageAction("setting.contentTypes.addNewAction", () => { self.onAddNewItemClicked(); }));
     }
     private onAddNewItemClicked() {
         this.navigate(route.contentType.addContentType.name);

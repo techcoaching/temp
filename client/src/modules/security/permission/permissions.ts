@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
-import { BasePage, PageAction, IoCNames } from "@app/common";
+import { BasePage, PageAction, IoCNames, PageDropdownAction } from "@app/common";
 import { PermissionsModel } from "./permissionsModel";
 import { IPermissionService } from "@app/security";
 import route from "../_share/config/route";
@@ -8,12 +8,21 @@ import route from "../_share/config/route";
     templateUrl: "src/modules/security/permission/permissions.html"
 })
 export class Permissions extends BasePage<PermissionsModel> {
-    constructor(router: Router) {
-        super(router);
+    constructor() {
+        super();
         let self = this;
         self.model = new PermissionsModel(self.i18nHelper);
         self.load();
-        this.model.addPageAction(new PageAction("btnAddNew", "security.permissions.addNewAction", () => { self.onAddNewItemClicked(); }));
+        this.model.addPageAction(new PageAction("security.permissions.addNewAction", () => { self.onAddNewItemClicked(); }));
+        this.model.addPageAction(new PageAction("security.permissions.addNewAction", () => { self.onAddNewItemClicked(); }));
+        this.model.addPageAction(new PageAction("security.permissions.addNewAction", () => { self.onAddNewItemClicked(); }));
+        this.model.addPageAction(new PageAction("security.permissions.addNewAction", () => { self.onAddNewItemClicked(); }));
+        this.model.addPageAction(new PageAction("security.permissions.addNewAction", () => { self.onAddNewItemClicked(); }));
+        this.model.addPageAction(
+            new PageDropdownAction("security.permissions.addNewAction", [
+                new PageAction("security.permissions.addNewAction", () => { self.onAddNewItemClicked(); })
+            ])
+        );
     }
     private onAddNewItemClicked() {
         this.navigate(route.permission.addPermission.name);

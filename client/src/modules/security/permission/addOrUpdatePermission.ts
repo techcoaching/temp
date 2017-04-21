@@ -12,10 +12,9 @@ export class AddOrUpdatePermission extends BasePage<AddOrUpdatePermissionModel> 
     private mode: FormMode = FormMode.AddNew;
     private itemId: any;
     constructor(router: Router, activatedRoute: ActivatedRoute) {
-        super(router);
+        super();
         let self = this;
         self.model = new AddOrUpdatePermissionModel();
-        self.router = router;
         if (!!activatedRoute.params["value"].id) {
             self.mode = FormMode.Edit;
             self.itemId = activatedRoute.params["value"].id;

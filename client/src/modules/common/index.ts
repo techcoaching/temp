@@ -11,6 +11,7 @@ export * from "./baseModule";
 export * from "./models/baseModel";
 export * from "./models/menu/appMenuItem";
 export * from "./models/moduleConfig";
+export * from "./models/imoduleConfigItem";
 
 export * from "./services/logger/consoleLogger";
 export * from "./services/baseService";
@@ -27,11 +28,12 @@ import appHelper from "./application/appHelper";
 import routerHelper from "./helpers/routerHelper";
 import domHelper from "./helpers/domHelper";
 import moduleHelper from "./helpers/moduleHelper";
-
+import urlHelper from "./helpers/urlHelper";
 let helperFacade: HelperFacade = new HelperFacade();
 helperFacade.iocHelper = iocHelper;
 helperFacade.appHelper = appHelper;
 helperFacade.routeHelper = routerHelper;
 helperFacade.domHelper = domHelper;
 helperFacade.moduleHelper = moduleHelper;
+helperFacade.urlHelper = urlHelper;
 export default helperFacade;

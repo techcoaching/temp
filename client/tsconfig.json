@@ -17,22 +17,14 @@
         "@app/setting":["src/modules/setting/index"],
         "@app/customerManagement":["src/modules/customerManagement/index"]
     }
-    // "typeRoots": [
-    //   "node_modules/@types/"
-    // ],
-    // "types": [
-    //   "jquery",
-    //   "ej.web.all",
-    //   "node",
-    //   "es6-shim"
-    // ]
   },
+  "include":[
+    "src/**/*.*"
+  ],
   "exclude": [
+    "src/themes/default/vendors/devbridge-autocomplete/src/jquery.autocomplete.d.ts",
     "node_modules",
     "typings/main",
-    "typings/main.d.ts",
-    "app/extension.d.ts",
-    "**/*.spec.ts",
-    "**/*.d.ts"
+    "typings/main.d.ts"
   ]
 }

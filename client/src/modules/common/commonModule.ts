@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
 import { RouterModule } from "@angular/router";
@@ -31,7 +31,8 @@ import ioc from "./ioc/iocConfig";
 @NgModule({
     imports: [CommonModule, FormsModule, HttpModule, RouterModule],
     declarations: [FormButton, FormTextArea, Validation, Page, HorizontalForm, FormPrimaryButton, FormInput, FormDefaultButton, FormTextInput, Style, Script, Grid, PageActions],
-    exports: [FormTextArea, Validation, FormsModule, HttpModule, RouterModule, Page, HorizontalForm, FormPrimaryButton, FormDefaultButton, FormInput, Style, Script, Grid, PageActions, FormTextInput]
+    exports: [FormTextArea, Validation, FormsModule, HttpModule, RouterModule, Page, HorizontalForm, FormPrimaryButton, FormDefaultButton, FormInput, Style, Script, Grid, PageActions, FormTextInput],
+    schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppCommon extends BaseModule {
     constructor() {
