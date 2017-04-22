@@ -56,7 +56,6 @@
     <Compile Include="Common\IFileRepository.cs" />
     <Compile Include="Common\ILanguageRepository.cs" />
     <Compile Include="Common\IParameterRepository.cs" />
-    <Compile Include="CustomerManagement\ICustomerRepository.cs" />
     <Compile Include="Inventory\ICategoryRepository.cs" />
     <Compile Include="Inventory\IUnitOfMeasurementRepository.cs" />
     <Compile Include="Order\IOrderRepository.cs" />

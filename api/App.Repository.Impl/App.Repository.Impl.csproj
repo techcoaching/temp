@@ -62,7 +62,6 @@
     <Compile Include="Common\FileRepository.cs" />
     <Compile Include="Common\LanguageRepository.cs" />
     <Compile Include="Common\ParameterRepository.cs" />
-    <Compile Include="CustomerManagement\CustomerRepository.cs" />
     <Compile Include="Inventory\CategoryRepository.cs" />
     <Compile Include="Inventory\UnitOfMeasurementRepository.cs" />
     <Compile Include="Order\OrderRepository.cs" />

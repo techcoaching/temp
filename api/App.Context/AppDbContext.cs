@@ -10,7 +10,6 @@
     using App.Entity.Setting;
     using App.Entity.Support;
     using App.Entity.Inventory;
-    using Entity.CustomerManagement;
     using Aggregate.Order;
 
     public class AppDbContext : App.Common.Data.MSSQL.MSSQLDbContext
@@ -20,7 +19,6 @@
         public System.Data.Entity.DbSet<CustomerDetail> CustomerDetails { get; set; }
         public System.Data.Entity.DbSet<OrderLine> OrderLines { get; set; }
 
-        public System.Data.Entity.DbSet<Customer> Customers { get; set; }
         public System.Data.Entity.DbSet<FileUpload> FileUploads { get; set; }
         public System.Data.Entity.DbSet<Product> Products { get; set; }
         public System.Data.Entity.DbSet<ProductCategory> ProductCategories { get; set; }

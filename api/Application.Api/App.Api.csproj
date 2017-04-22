@@ -192,7 +192,6 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Features\Common\FilesController.cs" />
-    <Compile Include="Features\CustomerManagement\CustomersController.cs" />
     <Compile Include="Features\Inventory\CategoriesController.cs" />
     <Compile Include="Features\Inventory\UnitOfMeasurementsController.cs" />
     <Compile Include="Features\Order\OrdersController.cs" />

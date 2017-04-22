@@ -60,12 +60,6 @@
     <Compile Include="Common\FileUploadPreview.cs" />
     <Compile Include="Common\File\IFileService.cs" />
     <Compile Include="Common\ILanguageService.cs" />
-    <Compile Include="CustomerManagement\CreateCustomerRequest.cs" />
-    <Compile Include="CustomerManagement\CreateCustomerResponse.cs" />
-    <Compile Include="CustomerManagement\CustomerListItem.cs" />
-    <Compile Include="CustomerManagement\GetCustomerResponse.cs" />
-    <Compile Include="CustomerManagement\ICustomerService.cs" />
-    <Compile Include="CustomerManagement\UpdateCustomerRequest.cs" />
     <Compile Include="Inventory\CategoryListItem.cs" />
     <Compile Include="Inventory\CreateCategoryReponse.cs" />
     <Compile Include="Inventory\CreateCategoryRequest.cs" />
