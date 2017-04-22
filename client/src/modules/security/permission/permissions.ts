@@ -14,15 +14,6 @@ export class Permissions extends BasePage<PermissionsModel> {
         self.model = new PermissionsModel(self.i18nHelper);
         self.load();
         this.model.addPageAction(new PageAction("security.permissions.addNewAction", () => { self.onAddNewItemClicked(); }));
-        this.model.addPageAction(new PageAction("security.permissions.addNewAction", () => { self.onAddNewItemClicked(); }));
-        this.model.addPageAction(new PageAction("security.permissions.addNewAction", () => { self.onAddNewItemClicked(); }));
-        this.model.addPageAction(new PageAction("security.permissions.addNewAction", () => { self.onAddNewItemClicked(); }));
-        this.model.addPageAction(new PageAction("security.permissions.addNewAction", () => { self.onAddNewItemClicked(); }));
-        this.model.addPageAction(
-            new PageDropdownAction("security.permissions.addNewAction", [
-                new PageAction("security.permissions.addNewAction", () => { self.onAddNewItemClicked(); })
-            ])
-        );
     }
     private onAddNewItemClicked() {
         this.navigate(route.permission.addPermission.name);

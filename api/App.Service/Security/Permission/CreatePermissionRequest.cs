@@ -4,10 +4,10 @@
 
     public class CreatePermissionRequest
     {
-        [Required("security.addPermission.validation.nameIsRequire")]
+        [Required("security.addOrUpdatePermission.validation.nameIsRequire")]
         public string Name { get; set; }
 
-        [Required("security.addPermission.validation.keyIsRequire")]
+        [Required("security.addOrUpdatePermission.validation.keyIsRequire")]
         public string Key { get; set; }
 
         public string Description { get; set; }

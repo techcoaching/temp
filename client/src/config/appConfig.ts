@@ -12,12 +12,13 @@ let appConfig: IAppConfig = {
         lang: LANG.EN,
         /* files: [Locale.Common, Locale.Setting, Locale.Security] */
         files: helperFacade.moduleHelper.getModuleLocales(modules)
+        //files: []
     },
     localeUrl: "/src/resources/locales/",
-    rootApi: "http://localhost:22383/api/",
+    rootApi: "http://localhost/api/",
     ioc: ioc,
-    layout:{
-        component:  DefaultLayout,
+    layout: {
+        component: DefaultLayout,
         module: DefaultLayoutModule
     },
     routes: helperFacade.routeHelper.getModuleRoute(modules)

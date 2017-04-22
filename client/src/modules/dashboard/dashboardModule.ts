@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
-import { AppCommon } from "@app/common";
+import { AppCommon, BaseModule, ModuleConfig, ModuleNames } from "@app/common";
 import { DashboardRoute } from "./dashboardRoute";
 import { SaleReport } from "./sale/saleReport";
 @NgModule({
@@ -10,4 +10,8 @@ import { SaleReport } from "./sale/saleReport";
     declarations: [SaleReport],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class DashboardModule { }
+export class DashboardModule extends BaseModule {
+    constructor() {
+        super(new ModuleConfig(ModuleNames.Dashboard, []));
+    }
+}

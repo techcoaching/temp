@@ -21,7 +21,6 @@ import { EJAngular2Module } from 'ej-angular2';
 })
 export class Application {
     constructor(ref: ApplicationRef) {
-        helperFacade.appHelper.setConfig(appConfig);
         helperFacade.appHelper.setInjector(ref["_injector"]);
         let resourceManager: IResourceManager = window.ioc.resolve(IoCNames.IResource);
         resourceManager.load(appConfig.localization.files);

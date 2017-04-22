@@ -13,13 +13,13 @@ export class PermissionService extends BaseService implements IPermissionService
 
     public getPermission(itemId: string): Promise {
         let iconnector: IConnector = window.ioc.resolve(IoCNames.IConnector);
-        let url = String.format("permisisons/{0}", itemId);
+        let url = String.format("permissions/{0}", itemId);
         return iconnector.get(this.resolve(url));
     }
 
     public updatePermission(model: any): Promise {
         let iconnector: IConnector = window.ioc.resolve(IoCNames.IConnector);
-        let url = "permissions";
+        let url = String.format("permissions/{0}", model.id);
         return iconnector.put(this.resolve(url), model);
     }
 

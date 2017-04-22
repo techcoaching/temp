@@ -59,12 +59,12 @@
             IPermissionRepository perRepo = IoC.Container.Resolve<IPermissionRepository>();
             if (perRepo.GetByName(permission.Name) != null)
             {
-                validationException.Add(new App.Common.Validation.ValidationError("security.addPermission.validation.nameAlreadyExist"));
+                validationException.Add(new App.Common.Validation.ValidationError("security.addOrUpdatePermission.validation.nameAlreadyExist"));
             }
 
             if (perRepo.GetByKey(permission.Key) != null)
             {
-                validationException.Add(new App.Common.Validation.ValidationError("security.addPermission.validation.keyAlreadyExist"));
+                validationException.Add(new App.Common.Validation.ValidationError("security.addOrUpdatePermission.validation.keyAlreadyExist"));
             }
 
             validationException.ThrowIfError();

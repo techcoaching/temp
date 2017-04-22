@@ -32,10 +32,10 @@ import ioc from "./ioc/iocConfig";
     imports: [CommonModule, FormsModule, HttpModule, RouterModule],
     declarations: [FormButton, FormTextArea, Validation, Page, HorizontalForm, FormPrimaryButton, FormInput, FormDefaultButton, FormTextInput, Style, Script, Grid, PageActions],
     exports: [FormTextArea, Validation, FormsModule, HttpModule, RouterModule, Page, HorizontalForm, FormPrimaryButton, FormDefaultButton, FormInput, Style, Script, Grid, PageActions, FormTextInput],
-    schemas:[CUSTOM_ELEMENTS_SCHEMA]
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppCommon extends BaseModule {
     constructor() {
-        super(new ModuleConfig(ModuleNames.Security, ioc));
+        super(new ModuleConfig(ModuleNames.Common, ioc));
     }
 }
