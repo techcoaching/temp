@@ -11,8 +11,8 @@ export class ContentTypesModel {
                 { field: "description", title: resourceHelper.resolve("setting.contentTypes.grid.description") }
             ],
             data: [],
-            enableEdit: true,
-            enableDelete: true
+            enableEdit: false,
+            enableDelete: false
         };
     }
     public addPageAction(action: any) {

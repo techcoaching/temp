@@ -13,7 +13,7 @@ export class ContentTypes extends BasePage<ContentTypesModel> {
         let self = this;
         self.model = new ContentTypesModel(self.i18nHelper);
         self.load();
-        this.model.addPageAction(new PageAction("setting.contentTypes.addNewAction", () => { self.onAddNewItemClicked(); }));
+        //this.model.addPageAction(new PageAction("setting.contentTypes.addNewAction", () => { self.onAddNewItemClicked(); }));
     }
     private onAddNewItemClicked() {
         this.navigate(route.contentType.addContentType.name);
