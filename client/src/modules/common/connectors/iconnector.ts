@@ -5,7 +5,4 @@ export interface IConnector {
     put(url: string, data: any): Promise;
     get(url: string): Promise;
     delete(url: string): Promise;
-    // get(url: string): Promise;
-    // post(url: string, data: any): Promise;
-    // getJSON(jsonPath: string): Promise;
 }

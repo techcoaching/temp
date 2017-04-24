@@ -2,7 +2,6 @@ import { IoCLifeCycle } from "./enum";
 import { SingletonObjectBuilder } from "./builder/singletonObjectBuilder";
 import { TransientObjectBuilder } from "./builder/transientObjectBuilder";
 import { IObjectBuilder } from "./builder/iobjectBuilder";
-//import appHelper from "./appHelper";
 import appHelper from "../application/appHelper";
 export class IoCFactory {
     public static create(): IocContainer {
@@ -17,7 +16,6 @@ export class IocContainer {
     public import(registrations: Array<any>) {
         this.registrations = this.registrations || [];
         this.registrations = this.registrations.merge(registrations, (item: any) => { return item.name; });
-        //this.registrations = this.registrations.concat(registrations);
     }
 
     public resolve(obj: any): any {

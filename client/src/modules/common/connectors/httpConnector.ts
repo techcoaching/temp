@@ -1,16 +1,15 @@
+import "rxjs/add/operator/map";
 import { Injectable } from "@angular/core";
 import { Http, Response } from "@angular/http";
-import "rxjs/add/operator/map";
 import { IConnector } from "./iconnector";
 import { Promise, PromiseFactory } from "./../models/promise";
 import { JsonHeaders } from "./jsonHeaders";
-//import appConfig from "./appConfig";
-import appHelper from "./../application/appHelper";
 import { IEventManager } from "../event";
 import { LoadingIndicatorEvent } from "../enum";
 import { ValidationException, ValidationEvent } from "../exception";
 import { HttpStatusCode, HttpError } from "./enum";
 import { IoCNames } from "../ioc/enum";
+import appHelper from "./../application/appHelper";
 
 export class HttpConnector implements IConnector {
     private static eventManager: IEventManager;
@@ -115,8 +114,8 @@ export class HttpConnector implements IConnector {
         let validationEror: ValidationException;
         switch (exception.status) {
             case HttpStatusCode.BadRequest:
-                validationEror = exception.json().errors && exception.json().errors.length ? 
-                    this.getValidationExceptionFromResponse(exception.json().errors) : 
+                validationEror = exception.json().errors && exception.json().errors.length ?
+                    this.getValidationExceptionFromResponse(exception.json().errors) :
                     new ValidationException(HttpError.BadRequest);
                 break;
             case HttpStatusCode.NotFound:

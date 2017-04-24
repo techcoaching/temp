@@ -4,9 +4,5 @@ export class JsonHeaders extends Headers {
         super();
         this.append("Content-Type", "application/json");
         this.append("accept", "application/json");
-        //let token: any = authService.getAuth().token;
-        // if (!!token && !String.isNullOrWhiteSpace(token.value)) {
-        //     this.append(configHelper.getAppConfig().auth.token, token.value);
-        // }
     }
 }

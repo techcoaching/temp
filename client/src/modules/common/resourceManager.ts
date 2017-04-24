@@ -1,13 +1,12 @@
 import { PromiseFactory, Promise } from "./models/promise";
 import { Hashtable } from "./models/list/hashtable";
-import appHelper from "./application/appHelper";
-//import appConfig from "../../config/appConfig";
-import objectHelper from "./helpers/objectHelper";
-//import configHelper from "../helpers/configHelper";
-import userProfileHelper from "./helpers/userProfileHelper";
 import { IoCNames } from "./ioc/enum";
-import {IResourceManager} from "./iresourceManager";
-import {IConnector} from "./connectors/iconnector"; 
+import { IResourceManager } from "./iresourceManager";
+import { IConnector } from "./connectors/iconnector";
+
+import appHelper from "./application/appHelper";
+import objectHelper from "./helpers/objectHelper";
+import userProfileHelper from "./helpers/userProfileHelper";
 
 
 export class ResourceManager implements IResourceManager {
@@ -41,7 +40,7 @@ export class ResourceManager implements IResourceManager {
         let def = PromiseFactory.create();
         let lang: string = userProfileHelper.getLang();
         let resourcePath = String.format("{0}{1}.{2}.json", appHelper.getConfig().localeUrl, moduleName, lang);
-        let connector:IConnector = window.ioc.resolve(IoCNames.IConnector);
+        let connector: IConnector = window.ioc.resolve(IoCNames.IConnector);
         let self: ResourceManager = this;
         connector.getJSON(resourcePath).then(function (data: any) {
             self.resources.set(moduleName, data);

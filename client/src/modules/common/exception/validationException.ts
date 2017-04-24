@@ -3,7 +3,7 @@ import { ValidationEvent } from "./enum";
 import { IoCNames } from "../ioc/enum";
 export class ValidationException {
     constructor(key: string = "", params: any = {}) {
-        if (key !== "") {
+        if (key !== String.empty) {
             this.add(key, params);
         }
     }
